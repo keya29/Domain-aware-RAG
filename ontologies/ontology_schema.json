@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EKIP Domain Ontology Schema",
+  "description": "Schema for Enterprise Knowledge Intelligence Platform domain ontology files",
+  "type": "object",
+  "required": ["domain_id", "display_name", "description", "embedding_strategy", "query_expansion", "answer_generation"],
+  "properties": {
+    "domain_id": {
+      "type": "string",
+      "description": "Unique identifier for the domain (snake_case)",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "Human-readable domain name for UI display"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of what document types this domain covers"
+    },
+    "version": {
+      "type": "string",
+      "description": "Ontology version string",
+      "default": "1.0"
+    },
+    "embedding_strategy": {
+      "type": "string",
+      "enum": ["embed_all", "embed_entity_rich", "embed_above_threshold"],
+      "description": "Strategy for selective embedding during ingestion"
+    },
+    "entity_threshold": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "description": "Minimum entity count for embed_above_threshold strategy"
+    },
+    "query_expansion": {
+      "type": "object",
+      "required": ["system_role", "domain_context", "validation_scope"],
+      "properties": {
+        "system_role": { "type": "string" },
+        "domain_context": { "type": "string" },
+        "validation_scope": { "type": "string" }
+      }
+    },
+    "answer_generation": {
+      "type": "object",
+      "required": ["system_role", "greeting_response"],
+      "properties": {
+        "system_role": { "type": "string" },
+        "greeting_response": { "type": "string" }
+      }
+    },
+    "entity_levels": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Valid entity category levels for this domain"
+    },
+    "keyword_acronyms": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Domain-specific acronyms to allow as single-token keywords"
+    },
+    "entity_catalogue_path": {
+      "type": ["string", "null"],
+      "description": "Path to external Excel entity catalogue (null if using inline entities)"
+    },
+    "entities": {
+      "type": "array",
+      "description": "Inline entity catalogue for this domain (preferred over Excel catalogue)",
+      "items": {
+        "type": "object",
+        "required": ["entity_category_high", "entity_name"],
+        "properties": {
+          "entity_category_high": { "type": "string" },
+          "entity_sub_category": { "type": "string" },
+          "entity_name": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "entity_examples": {
+      "type": "array",
+      "description": "Few-shot examples for NER extraction LLM prompts",
+      "items": {
+        "type": "object",
+        "properties": {
+          "catalogue": { "type": "object" },
+          "scope_text_contains": { "type": "string" },
+          "expected_entity": { "type": "object" }
+        }
+      }
+    },
+    "example_queries": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Example queries shown in the UI for this domain"
+    },
+    "anchor_taxonomy": {
+      "type": "object",
+      "description": "Anchor bucket taxonomy for query expansion",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["canonical"],
+        "properties": {
+          "canonical": { "type": "string" },
+          "synonyms": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "phrases": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "retrieval_hints": {
+      "type": "object",
+      "description": "Domain-specific hints for hybrid retrieval query type detection",
+      "properties": {
+        "service_indicators": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "exclusion_indicators": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "process_indicators": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "hierarchy_boost_paths": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

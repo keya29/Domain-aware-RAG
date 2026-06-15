@@ -1,0 +1,220 @@
+{
+  "domain_id": "contracts",
+  "display_name": "Contracts & Legal Agreements",
+  "description": "Commercial contracts, service agreements, NDAs, vendor agreements, SOWs, and legal documentation",
+  "version": "1.0",
+
+  "embedding_strategy": "embed_all",
+  "entity_threshold": 1,
+
+  "query_expansion": {
+    "system_role": "You translate informal contract questions into formal legal document search queries.",
+    "domain_context": "contracts, legal agreements, commercial terms, obligations, liabilities, NDAs, SOWs, vendor agreements, SLAs",
+    "validation_scope": "contracts, legal agreements, commercial terms, obligations, liability, indemnity, warranty, termination, intellectual property, compliance, vendor"
+  },
+
+  "answer_generation": {
+    "system_role": "You are a contract analysis assistant.\nAnswer the question using ONLY the provided contract documentation context.\n\nRules:\n- Answer in clear, concise bullet points.\n- Extract exact terms, dates, amounts, and obligations as written in the contract.\n- Clearly identify which party bears which obligation.\n- Do not infer, interpret, or provide legal advice beyond what is stated.\n- If the clause is not in the provided context, state: \"This term was not found in the available contract documents.\"\n- Always note if a provision has conditions or exceptions.\n- You are NOT a lawyer. Do not provide legal advice.",
+    "greeting_response": "Hello! I'm a contract analysis assistant. I can help you find specific terms, obligations, and clauses within your contract documents. How can I help you today?"
+  },
+
+  "entity_levels": ["Obligation", "Right", "Term", "Party", "Liability", "Condition"],
+  "keyword_acronyms": ["nda", "sow", "msa", "sla", "ip", "gdpr", "ccpa", "pii"],
+
+  "entity_catalogue_path": null,
+
+  "entities": [
+    {
+      "entity_category_high": "Term",
+      "entity_sub_category": "Duration",
+      "entity_name": "Contract Term",
+      "description": "The duration for which the contract is in effect"
+    },
+    {
+      "entity_category_high": "Term",
+      "entity_sub_category": "Payment",
+      "entity_name": "Payment Terms",
+      "description": "Schedule and conditions for payment obligations"
+    },
+    {
+      "entity_category_high": "Term",
+      "entity_sub_category": "Termination",
+      "entity_name": "Termination Clause",
+      "description": "Conditions and notice periods under which the contract may be terminated"
+    },
+    {
+      "entity_category_high": "Liability",
+      "entity_sub_category": "Limitation",
+      "entity_name": "Limitation of Liability",
+      "description": "Cap on damages a party can be held responsible for"
+    },
+    {
+      "entity_category_high": "Liability",
+      "entity_sub_category": "Indemnity",
+      "entity_name": "Indemnification",
+      "description": "Obligation of one party to compensate the other for specified losses"
+    },
+    {
+      "entity_category_high": "Obligation",
+      "entity_sub_category": "Confidentiality",
+      "entity_name": "Confidentiality Obligation",
+      "description": "Requirements to keep specified information secret and non-disclosed"
+    },
+    {
+      "entity_category_high": "Right",
+      "entity_sub_category": "Intellectual Property",
+      "entity_name": "IP Ownership",
+      "description": "Ownership rights over intellectual property created under the contract"
+    },
+    {
+      "entity_category_high": "Condition",
+      "entity_sub_category": "Warranty",
+      "entity_name": "Warranty",
+      "description": "Guarantees made by a party about the quality or performance of goods/services"
+    },
+    {
+      "entity_category_high": "Term",
+      "entity_sub_category": "Renewal",
+      "entity_name": "Auto-Renewal",
+      "description": "Provision that renews the contract automatically unless notice is given"
+    },
+    {
+      "entity_category_high": "Party",
+      "entity_sub_category": "Vendor",
+      "entity_name": "Service Provider",
+      "description": "Entity providing services under the agreement"
+    }
+  ],
+
+  "entity_examples": [
+    {
+      "catalogue": {
+        "Entity Category (High Level)": "Term",
+        "Entity Sub Category": "Duration",
+        "Entity Name": "Contract Term",
+        "Description": "Duration for which the contract is in effect"
+      },
+      "scope_text_contains": "... This Agreement shall remain in effect for a period of 24 months ...",
+      "expected_entity": {
+        "entity_name": "Contract Term",
+        "entity_category": "Duration",
+        "entity_value": "24 months",
+        "level": "Term"
+      }
+    },
+    {
+      "catalogue": {
+        "Entity Category (High Level)": "Liability",
+        "Entity Sub Category": "Limitation",
+        "Entity Name": "Limitation of Liability",
+        "Description": "Cap on damages a party can be held responsible for"
+      },
+      "scope_text_contains": "... liability shall not exceed the total fees paid in the preceding 12 months ...",
+      "expected_entity": {
+        "entity_name": "Limitation of Liability",
+        "entity_category": "Limitation",
+        "entity_value": "total fees paid in the preceding 12 months",
+        "level": "Liability"
+      }
+    }
+  ],
+
+  "example_queries": [
+    "What is the contract duration and renewal terms?",
+    "What are the payment terms and schedule?",
+    "How can either party terminate this agreement?",
+    "What is the limitation of liability?",
+    "Who owns the intellectual property created under this contract?"
+  ],
+
+  "anchor_taxonomy": {
+    "payment_and_fees": {
+      "canonical": "payment terms",
+      "synonyms": [
+        "payment", "invoice", "fee", "price", "cost", "rate",
+        "net 30", "net 60", "late payment", "interest", "penalty",
+        "refund", "credit", "milestone payment"
+      ],
+      "phrases": [
+        "payment schedule", "payment due", "invoicing terms", "payment method",
+        "billing cycle", "upfront payment", "deferred payment"
+      ]
+    },
+    "termination_and_renewal": {
+      "canonical": "termination",
+      "synonyms": [
+        "termination", "cancellation", "expiry", "expiration",
+        "renewal", "auto-renewal", "evergreen", "notice period",
+        "30 days notice", "60 days notice", "90 days notice",
+        "breach", "default", "for cause", "without cause"
+      ],
+      "phrases": [
+        "terminate the agreement", "notice of termination", "contract end date",
+        "renewal clause", "opt-out", "wind-down", "transition period"
+      ]
+    },
+    "liability_and_indemnity": {
+      "canonical": "limitation of liability",
+      "synonyms": [
+        "liability", "indemnification", "indemnity", "hold harmless",
+        "damages", "consequential damages", "indirect damages",
+        "cap on liability", "limitation", "limitation of liability"
+      ],
+      "phrases": [
+        "shall not be liable", "limit of liability", "indemnify and defend",
+        "third party claims", "gross negligence", "willful misconduct"
+      ]
+    },
+    "confidentiality_and_ip": {
+      "canonical": "confidentiality",
+      "synonyms": [
+        "confidentiality", "nda", "non-disclosure", "trade secret",
+        "proprietary", "intellectual property", "ip", "copyright",
+        "ownership", "work for hire", "license"
+      ],
+      "phrases": [
+        "confidential information", "shall not disclose", "ip ownership",
+        "license grant", "permitted use", "data protection"
+      ]
+    },
+    "warranties_and_representations": {
+      "canonical": "warranty",
+      "synonyms": [
+        "warranty", "representation", "guarantee", "covenant",
+        "as-is", "disclaimer", "fitness for purpose",
+        "merchantability"
+      ],
+      "phrases": [
+        "warrants that", "represents and warrants", "no warranty",
+        "disclaimer of warranty", "service levels", "uptime guarantee"
+      ]
+    },
+    "dispute_resolution": {
+      "canonical": "dispute resolution",
+      "synonyms": [
+        "dispute", "arbitration", "mediation", "litigation",
+        "governing law", "jurisdiction", "venue", "class action"
+      ],
+      "phrases": [
+        "resolve disputes", "binding arbitration", "choice of law",
+        "applicable law", "courts of", "exclusive jurisdiction"
+      ]
+    }
+  },
+
+  "retrieval_hints": {
+    "service_indicators": [
+      "term", "duration", "period", "amount", "fee", "rate", "days",
+      "months", "years", "percentage", "cap", "limit", "threshold"
+    ],
+    "exclusion_indicators": [
+      "shall not", "not liable", "excluded", "waived", "disclaimed",
+      "except", "does not apply", "not covered"
+    ],
+    "process_indicators": [
+      "how to", "procedure", "steps", "notice", "written notice",
+      "within", "prior to", "upon", "elect to"
+    ],
+    "hierarchy_boost_paths": ["clause", "section", "article", "schedule", "exhibit"]
+  }
+}

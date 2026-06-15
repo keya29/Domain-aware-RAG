@@ -1,0 +1,341 @@
+{
+  "domain_id": "hr",
+  "display_name": "HR Policies & People Operations",
+  "description": "Human resources policy documents, employee handbooks, benefits guides, and people operations documentation",
+  "version": "1.0",
+
+  "embedding_strategy": "embed_all",
+  "entity_threshold": 1,
+
+  "query_expansion": {
+    "system_role": "You translate informal employee questions into formal HR policy search queries.",
+    "domain_context": "human resources, employee policies, HR handbook, benefits, leave, compensation, performance management, workplace policies",
+    "validation_scope": "human resources, employment, HR policy, employee benefits, leave, compensation, workplace conduct, onboarding, offboarding, performance"
+  },
+
+  "answer_generation": {
+    "system_role": "You are an HR policy assistant.\nAnswer the employee's question using ONLY the provided policy documentation context.\n\nRules:\n- Answer in clear, concise bullet points.\n- Cite the specific policy section or document when identifiable.\n- Extract exact policy terms, timelines, and eligibility criteria as written.\n- Do not infer, interpret, or extrapolate beyond what is explicitly stated.\n- If the policy does not address the question directly, state: \"This specific situation is not addressed in the available policy documents. Please contact HR directly.\"\n- Do not provide legal advice.",
+    "greeting_response": "Hello! I'm an HR policy assistant. I can help you find information about company policies, benefits, and HR procedures. How can I help you today?"
+  },
+
+  "entity_levels": ["Policy", "Benefit", "Process", "Eligibility", "Compliance"],
+  "keyword_acronyms": ["pto", "fmla", "ada", "eeoc", "erisa", "cobra", "hsa", "fsa", "401k"],
+
+  "entity_catalogue_path": null,
+
+  "entities": [
+    {
+      "entity_category_high": "Benefit",
+      "entity_sub_category": "Leave",
+      "entity_name": "Paid Time Off",
+      "description": "Accrued paid leave available to employees for vacation, personal days, or illness"
+    },
+    {
+      "entity_category_high": "Benefit",
+      "entity_sub_category": "Leave",
+      "entity_name": "Sick Leave",
+      "description": "Paid leave specifically for illness, medical appointments, or caring for sick family members"
+    },
+    {
+      "entity_category_high": "Benefit",
+      "entity_sub_category": "Leave",
+      "entity_name": "Parental Leave",
+      "description": "Paid or unpaid leave granted to employees upon birth, adoption, or foster placement of a child"
+    },
+    {
+      "entity_category_high": "Benefit",
+      "entity_sub_category": "Leave",
+      "entity_name": "FMLA",
+      "description": "Family and Medical Leave Act — up to 12 weeks of unpaid, job-protected leave"
+    },
+    {
+      "entity_category_high": "Benefit",
+      "entity_sub_category": "Compensation",
+      "entity_name": "Base Salary",
+      "description": "Fixed regular pay rate before bonuses or overtime"
+    },
+    {
+      "entity_category_high": "Benefit",
+      "entity_sub_category": "Compensation",
+      "entity_name": "Bonus",
+      "description": "Variable pay awarded based on performance, company results, or tenure"
+    },
+    {
+      "entity_category_high": "Benefit",
+      "entity_sub_category": "Health",
+      "entity_name": "Health Insurance",
+      "description": "Employer-sponsored medical, dental, and vision insurance coverage"
+    },
+    {
+      "entity_category_high": "Benefit",
+      "entity_sub_category": "Retirement",
+      "entity_name": "401(k)",
+      "description": "Employer-sponsored retirement savings plan, often with employer matching"
+    },
+    {
+      "entity_category_high": "Policy",
+      "entity_sub_category": "Conduct",
+      "entity_name": "Code of Conduct",
+      "description": "Standards governing professional behavior, ethics, and workplace interactions"
+    },
+    {
+      "entity_category_high": "Policy",
+      "entity_sub_category": "Conduct",
+      "entity_name": "Remote Work Policy",
+      "description": "Rules and eligibility for working from home or remote locations"
+    },
+    {
+      "entity_category_high": "Process",
+      "entity_sub_category": "Onboarding",
+      "entity_name": "Onboarding",
+      "description": "The process for integrating new employees into the organization"
+    },
+    {
+      "entity_category_high": "Process",
+      "entity_sub_category": "Performance",
+      "entity_name": "Performance Review",
+      "description": "Formal evaluation of employee performance against goals and competencies"
+    },
+    {
+      "entity_category_high": "Compliance",
+      "entity_sub_category": "Anti-Discrimination",
+      "entity_name": "Anti-Discrimination Policy",
+      "description": "Policy prohibiting discrimination based on protected characteristics"
+    }
+  ],
+
+  "entity_examples": [
+    {
+      "catalogue": {
+        "Entity Category (High Level)": "Benefit",
+        "Entity Sub Category": "Leave",
+        "Entity Name": "Paid Time Off",
+        "Description": "Accrued paid leave available to employees"
+      },
+      "scope_text_contains": "... employees accrue 15 days of PTO per year ...",
+      "expected_entity": {
+        "entity_name": "Paid Time Off",
+        "entity_category": "Leave",
+        "entity_value": "15 days per year",
+        "level": "Benefit"
+      }
+    },
+    {
+      "catalogue": {
+        "Entity Category (High Level)": "Policy",
+        "Entity Sub Category": "Conduct",
+        "Entity Name": "Remote Work Policy",
+        "Description": "Rules and eligibility for working from home"
+      },
+      "scope_text_contains": "... employees may work remotely up to 3 days per week ...",
+      "expected_entity": {
+        "entity_name": "Remote Work Policy",
+        "entity_category": "Conduct",
+        "entity_value": "up to 3 days per week",
+        "level": "Policy"
+      }
+    }
+  ],
+
+  "example_queries": [
+    "How many days of PTO do I get per year?",
+    "What is the parental leave policy?",
+    "How does the performance review process work?",
+    "Can I work remotely full-time?",
+    "What are the health insurance options available?"
+  ],
+
+  "anchor_taxonomy": {
+    "leave_and_time_off": {
+      "canonical": "paid time off",
+      "synonyms": [
+        "pto",
+        "vacation",
+        "paid leave",
+        "sick leave",
+        "sick days",
+        "personal days",
+        "time off",
+        "annual leave",
+        "parental leave",
+        "maternity leave",
+        "paternity leave",
+        "bereavement leave",
+        "fmla",
+        "family medical leave"
+      ],
+      "phrases": [
+        "days off",
+        "leave of absence",
+        "accrual rate",
+        "carry over",
+        "rollover policy",
+        "leave balance",
+        "request time off",
+        "medical leave"
+      ]
+    },
+    "compensation_and_pay": {
+      "canonical": "salary",
+      "synonyms": [
+        "salary",
+        "base pay",
+        "compensation",
+        "wages",
+        "paycheck",
+        "bonus",
+        "commission",
+        "raise",
+        "pay increase",
+        "merit increase",
+        "overtime",
+        "payroll"
+      ],
+      "phrases": [
+        "pay cycle",
+        "direct deposit",
+        "pay stub",
+        "annual salary",
+        "hourly rate",
+        "performance bonus",
+        "salary band",
+        "compensation review"
+      ]
+    },
+    "benefits_and_perks": {
+      "canonical": "employee benefits",
+      "synonyms": [
+        "benefits",
+        "health insurance",
+        "dental",
+        "vision",
+        "medical",
+        "401k",
+        "retirement",
+        "hsa",
+        "fsa",
+        "life insurance",
+        "disability insurance",
+        "stock options",
+        "equity"
+      ],
+      "phrases": [
+        "open enrollment",
+        "benefits package",
+        "employer match",
+        "benefit election",
+        "coverage period",
+        "dependent coverage",
+        "benefits portal"
+      ]
+    },
+    "performance_and_growth": {
+      "canonical": "performance review",
+      "synonyms": [
+        "performance review",
+        "performance evaluation",
+        "annual review",
+        "appraisal",
+        "feedback",
+        "goal setting",
+        "okr",
+        "kpi",
+        "promotion",
+        "career development",
+        "training",
+        "learning and development"
+      ],
+      "phrases": [
+        "performance cycle",
+        "review period",
+        "self-assessment",
+        "360 feedback",
+        "development plan",
+        "growth opportunities"
+      ]
+    },
+    "workplace_conduct": {
+      "canonical": "code of conduct",
+      "synonyms": [
+        "code of conduct",
+        "workplace policy",
+        "behavior",
+        "harassment",
+        "discrimination",
+        "retaliation",
+        "grievance",
+        "complaint",
+        "whistleblower",
+        "conflict of interest",
+        "ethics"
+      ],
+      "phrases": [
+        "report misconduct",
+        "HR complaint",
+        "hostile work environment",
+        "equal opportunity",
+        "zero tolerance",
+        "policy violation"
+      ]
+    },
+    "remote_and_hybrid_work": {
+      "canonical": "remote work policy",
+      "synonyms": [
+        "remote work",
+        "work from home",
+        "wfh",
+        "hybrid work",
+        "flexible work",
+        "telecommute",
+        "home office"
+      ],
+      "phrases": [
+        "remote eligible",
+        "in-office days",
+        "hybrid schedule",
+        "remote setup",
+        "equipment policy",
+        "internet reimbursement"
+      ]
+    },
+    "onboarding_and_offboarding": {
+      "canonical": "onboarding",
+      "synonyms": [
+        "onboarding",
+        "new hire",
+        "orientation",
+        "offboarding",
+        "resignation",
+        "termination",
+        "notice period",
+        "exit interview",
+        "rehire"
+      ],
+      "phrases": [
+        "first day",
+        "probation period",
+        "background check",
+        "i-9",
+        "w-4",
+        "direct deposit setup",
+        "two weeks notice"
+      ]
+    }
+  },
+
+  "retrieval_hints": {
+    "service_indicators": [
+      "how many", "how much", "days", "weeks", "amount", "rate", "limit",
+      "eligible", "qualify", "entitle", "receive", "accrue", "earn"
+    ],
+    "exclusion_indicators": [
+      "not eligible", "not covered", "excluded", "does not apply",
+      "ineligible", "except", "restriction"
+    ],
+    "process_indicators": [
+      "how to", "how do i", "how can i", "request", "apply",
+      "submit", "contact", "who to", "steps", "process"
+    ],
+    "hierarchy_boost_paths": ["policy", "section", "employee handbook", "benefits guide"]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "levels": {
+    "Appeals and Grievances": {
+      "Appeals Process": {
+        "Section_4": "appeal",
+        "Section_10": "appeal",
+        "Section_16": "appeal",
+        "Section_39": "appeal"
+      },
+      "Grievances Process": {
+        "Section_3": "Complaints and grievances",
+        "Section_10": "Complaints and Grievances Process",
+        "Section_39": "Complaints and Grievances Process"
+      }
+    },
+    "Coverage": {
+      "Covered Services": {
+        "Section_4": "approved for coverage",
+        "Section_6": "services that may be needed following discharge",
+        "Section_8": "continuation of coverage",
+        "Section_16": "approved for coverage",
+        "Section_18": "services that require preapproval",
+        "Section_24": "services that may be needed following discharge",
+        "Section_28": "continuation of coverage"
+      },
+      "Exclusions": {
+        "Section_3": "Benefits exclusions",
+        "Section_14": "Benefits exclusions"
+      },
+      "Prior Authorization": {
+        "Section_4": "preapproval",
+        "Section_5": "precertification",
+        "Section_7": "prenotification/precertification/preservice",
+        "Section_16": "preapproval",
+        "Section_21": "precertification",
+        "Section_26": "prenotification/precertification/preservice"
+      },
+      "Referral": {
+        "Section_4": "referral",
+        "Section_16": "referral"
+      }
+    },
+    "Member": {},
+    "Payer": {},
+    "Plan": {},
+    "Provider": {
+      "Out-of-Network Providers": {
+        "Section_8": "out-of-network",
+        "Section_28": "out-of-network"
+      }
+    },
+    "Services": {
+      "Ambulance Services": {
+        "Section_9": "emergency transportation",
+        "Section_37": "emergency transportation"
+      },
+      "Emergency Services": {
+        "Section_3": "Emergency services",
+        "Section_9": "Emergency services",
+        "Section_37": "Emergency services"
+      },
+      "Prescription Drugs": {
+        "Section_5": "specialty drugs",
+        "Section_21": "specialty drugs"
+      },
+      "Preventive Care": {
+        "Section_3": "Preventive drugs for adults and children",
+        "Section_13": "Preventive drugs for adults and children",
+        "Section_47": "Preventive drugs for adults and children"
+      }
+    }
+  }
+}

@@ -1,0 +1,1144 @@
+2026-03-22 16:16:34,377 - ERROR - Upload error
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 135, in _process_pdf_upload
+    from ingestion.multi_doc_orchestrator import ingest_any_from_url_or_file
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 17, in <module>
+    from ingestion.progress_tracker import progress_tracker
+ImportError: cannot import name 'progress_tracker' from 'ingestion.progress_tracker' (C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\progress_tracker.py)
+2026-03-22 16:22:08,245 - ERROR - Upload error
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 135, in _process_pdf_upload
+    from ingestion.multi_doc_orchestrator import ingest_any_from_url_or_file
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 17, in <module>
+    from ingestion.progress_tracker import progress_tracker
+ImportError: cannot import name 'progress_tracker' from 'ingestion.progress_tracker' (C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\progress_tracker.py)
+2026-03-22 16:23:05,003 - ERROR - Upload error
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 135, in _process_pdf_upload
+    from ingestion.multi_doc_orchestrator import ingest_any_from_url_or_file
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 18, in <module>
+    from ingestion.duplicate_handler import check_document_exists
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\duplicate_handler.py", line 12, in <module>
+    logger = logging.getLogger(_name_)
+                               ^^^^^^
+NameError: name '_name_' is not defined. Did you mean: '__name__'?
+2026-03-22 16:24:08,761 - ERROR - name '_ingest_html_entry' is not defined
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 170, in ingest_any_from_url_or_file
+    return _ingest_html_entry(
+           ^^^^^^^^^^^^^^^^^^
+NameError: name '_ingest_html_entry' is not defined
+2026-03-22 16:27:40,191 - ERROR - name '_ingest_html_entry' is not defined
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 170, in ingest_any_from_url_or_file
+    return _ingest_html_entry(
+           ^^^^^^^^^^^^^^^^^^
+NameError: name '_ingest_html_entry' is not defined
+2026-03-22 16:27:47,675 - ERROR - name '_ingest_html_entry' is not defined
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 170, in ingest_any_from_url_or_file
+    return _ingest_html_entry(
+           ^^^^^^^^^^^^^^^^^^
+NameError: name '_ingest_html_entry' is not defined
+2026-03-22 16:41:04,571 - INFO - Generated HTML doc_id: important_plan_information_20260322_111104_99e64c0e
+2026-03-22 16:41:04,572 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_111104_99e64c0e
+2026-03-22 16:41:04,576 - INFO - Created document output directory: outputs\important_plan_information_20260322_111104_99e64c0e
+2026-03-22 16:41:04,577 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 16:41:04,584 - ERROR - [Pipeline] HTML ingestion failed: No module named 'bs4'
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 503, in _ingest_html_entry
+    from ingestion.html_extraction import (
+    ...<2 lines>...
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\html_extraction.py", line 22, in <module>
+    from bs4 import BeautifulSoup
+ModuleNotFoundError: No module named 'bs4'
+2026-03-22 16:42:27,147 - INFO - Generated HTML doc_id: important_plan_information_20260322_111227_99e64c0e
+2026-03-22 16:42:27,147 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_111227_99e64c0e
+2026-03-22 16:42:27,149 - INFO - Created document output directory: outputs\important_plan_information_20260322_111227_99e64c0e
+2026-03-22 16:42:27,150 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 16:42:27,354 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 16:42:30,688 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_111227_99e64c0e\html_1774177950680.custom.json
+2026-03-22 16:42:30,691 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_111227_99e64c0e\html_1774177950680.custom.json
+2026-03-22 16:42:30,691 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 16:42:30,750 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_111227_99e64c0e\html_normalized_for_ner.json
+2026-03-22 16:42:30,751 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 16:42:30,783 - ERROR - [Pipeline] NER extraction failed: No module named 'dotenv'
+2026-03-22 16:42:30,791 - ERROR - Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 854, in _run_ner_extraction
+    from extraction.updated_ner_llm import main as ner_main
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 6, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+
+2026-03-22 16:42:30,796 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 16:42:30,799 - ERROR - [Pipeline] HTML ingestion failed: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 701, in _ingest_html_entry
+    hierarchy_json_path = create_html_entity_hierarchy(
+        entities_json_path,
+        normalized_json_path,
+        doc_files["hierarchy_json"],
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\html_entity_mapper.py", line 40, in create_html_entity_hierarchy
+    entities_json_path = Path(entities_json_path)
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 503, in __init__
+    super().__init__(*args)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 132, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+2026-03-22 21:56:25,404 - INFO - Generated HTML doc_id: important_plan_information_20260322_162625_99e64c0e
+2026-03-22 21:56:25,406 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_162625_99e64c0e
+2026-03-22 21:56:25,413 - INFO - Created document output directory: outputs\important_plan_information_20260322_162625_99e64c0e
+2026-03-22 21:56:25,415 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 21:56:25,635 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 21:56:28,895 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_162625_99e64c0e\html_1774196788892.custom.json
+2026-03-22 21:56:28,896 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_162625_99e64c0e\html_1774196788892.custom.json
+2026-03-22 21:56:28,896 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 21:56:28,929 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_162625_99e64c0e\html_normalized_for_ner.json
+2026-03-22 21:56:28,930 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 21:56:28,932 - ERROR - [Pipeline] NER extraction failed: No module named 'dotenv'
+2026-03-22 21:56:28,935 - ERROR - Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 854, in _run_ner_extraction
+    from extraction.updated_ner_llm import main as ner_main
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 6, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+
+2026-03-22 21:56:28,937 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 21:56:28,939 - ERROR - [Pipeline] HTML ingestion failed: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 701, in _ingest_html_entry
+    hierarchy_json_path = create_html_entity_hierarchy(
+        entities_json_path,
+        normalized_json_path,
+        doc_files["hierarchy_json"],
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\html_entity_mapper.py", line 40, in create_html_entity_hierarchy
+    entities_json_path = Path(entities_json_path)
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 503, in __init__
+    super().__init__(*args)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 132, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+2026-03-22 21:58:02,332 - INFO - Generated HTML doc_id: important_plan_information_20260322_162802_99e64c0e
+2026-03-22 21:58:02,333 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_162802_99e64c0e
+2026-03-22 21:58:02,337 - INFO - Created document output directory: outputs\important_plan_information_20260322_162802_99e64c0e
+2026-03-22 21:58:02,337 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 21:58:02,484 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 21:58:05,921 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_162802_99e64c0e\html_1774196885914.custom.json
+2026-03-22 21:58:05,925 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_162802_99e64c0e\html_1774196885914.custom.json
+2026-03-22 21:58:05,926 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 21:58:05,975 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_162802_99e64c0e\html_normalized_for_ner.json
+2026-03-22 21:58:05,976 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 21:58:05,992 - ERROR - [Pipeline] NER extraction failed: No module named 'openai'
+2026-03-22 21:58:05,995 - ERROR - Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 854, in _run_ner_extraction
+    from extraction.updated_ner_llm import main as ner_main
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 7, in <module>
+    from openai import AzureOpenAI
+ModuleNotFoundError: No module named 'openai'
+
+2026-03-22 21:58:05,996 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 21:58:05,997 - ERROR - [Pipeline] HTML ingestion failed: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 701, in _ingest_html_entry
+    hierarchy_json_path = create_html_entity_hierarchy(
+        entities_json_path,
+        normalized_json_path,
+        doc_files["hierarchy_json"],
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\html_entity_mapper.py", line 40, in create_html_entity_hierarchy
+    entities_json_path = Path(entities_json_path)
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 503, in __init__
+    super().__init__(*args)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 132, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+2026-03-22 22:00:00,016 - INFO - Generated HTML doc_id: important_plan_information_20260322_163000_99e64c0e
+2026-03-22 22:00:00,018 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_163000_99e64c0e
+2026-03-22 22:00:00,020 - INFO - Created document output directory: outputs\important_plan_information_20260322_163000_99e64c0e
+2026-03-22 22:00:00,022 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 22:00:00,167 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:00:03,675 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_163000_99e64c0e\html_1774197003669.custom.json
+2026-03-22 22:00:03,680 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_163000_99e64c0e\html_1774197003669.custom.json
+2026-03-22 22:00:03,681 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 22:00:03,725 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_163000_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:00:03,726 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 22:00:05,298 - ERROR - [Pipeline] NER extraction failed: Missing credentials. Please pass one of `api_key`, `azure_ad_token`, `azure_ad_token_provider`, or the `AZURE_OPENAI_API_KEY` or `AZURE_OPENAI_AD_TOKEN` environment variables.
+2026-03-22 22:00:05,302 - ERROR - Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 854, in _run_ner_extraction
+    from extraction.updated_ner_llm import main as ner_main
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 32, in <module>
+    client = AzureOpenAI(
+        azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+        api_key=os.getenv("AZURE_OPENAI_KEY"),
+        api_version=os.getenv("AZURE_OPENAI_API_VERSION") )
+  File "c:\RAG_demo\.venv\Lib\site-packages\openai\lib\azure.py", line 199, in __init__
+    raise OpenAIError(
+        "Missing credentials. Please pass one of `api_key`, `azure_ad_token`, `azure_ad_token_provider`, or the `AZURE_OPENAI_API_KEY` or `AZURE_OPENAI_AD_TOKEN` environment variables."
+    )
+openai.OpenAIError: Missing credentials. Please pass one of `api_key`, `azure_ad_token`, `azure_ad_token_provider`, or the `AZURE_OPENAI_API_KEY` or `AZURE_OPENAI_AD_TOKEN` environment variables.
+
+2026-03-22 22:00:05,304 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 22:00:05,305 - ERROR - [Pipeline] HTML ingestion failed: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 701, in _ingest_html_entry
+    hierarchy_json_path = create_html_entity_hierarchy(
+        entities_json_path,
+        normalized_json_path,
+        doc_files["hierarchy_json"],
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\html_entity_mapper.py", line 40, in create_html_entity_hierarchy
+    entities_json_path = Path(entities_json_path)
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 503, in __init__
+    super().__init__(*args)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 132, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+2026-03-22 22:02:09,518 - INFO - Generated HTML doc_id: important_plan_information_20260322_163209_99e64c0e
+2026-03-22 22:02:09,519 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_163209_99e64c0e
+2026-03-22 22:02:09,521 - INFO - Created document output directory: outputs\important_plan_information_20260322_163209_99e64c0e
+2026-03-22 22:02:09,523 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 22:02:09,671 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:02:13,089 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_163209_99e64c0e\html_1774197133084.custom.json
+2026-03-22 22:02:13,091 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_163209_99e64c0e\html_1774197133084.custom.json
+2026-03-22 22:02:13,091 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 22:02:13,159 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_163209_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:02:13,160 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 22:02:14,129 - ERROR - [Pipeline] NER extraction failed: Missing credentials. Please pass one of `api_key`, `azure_ad_token`, `azure_ad_token_provider`, or the `AZURE_OPENAI_API_KEY` or `AZURE_OPENAI_AD_TOKEN` environment variables.
+2026-03-22 22:02:14,132 - ERROR - Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 854, in _run_ner_extraction
+    from extraction.updated_ner_llm import main as ner_main
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 32, in <module>
+    client = AzureOpenAI(
+        azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+        api_key=os.getenv("AZURE_OPENAI_KEY"),
+        api_version=os.getenv("AZURE_OPENAI_API_VERSION") )
+  File "c:\RAG_demo\.venv\Lib\site-packages\openai\lib\azure.py", line 199, in __init__
+    raise OpenAIError(
+        "Missing credentials. Please pass one of `api_key`, `azure_ad_token`, `azure_ad_token_provider`, or the `AZURE_OPENAI_API_KEY` or `AZURE_OPENAI_AD_TOKEN` environment variables."
+    )
+openai.OpenAIError: Missing credentials. Please pass one of `api_key`, `azure_ad_token`, `azure_ad_token_provider`, or the `AZURE_OPENAI_API_KEY` or `AZURE_OPENAI_AD_TOKEN` environment variables.
+
+2026-03-22 22:02:14,133 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 22:02:14,134 - ERROR - [Pipeline] HTML ingestion failed: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 701, in _ingest_html_entry
+    hierarchy_json_path = create_html_entity_hierarchy(
+        entities_json_path,
+        normalized_json_path,
+        doc_files["hierarchy_json"],
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\html_entity_mapper.py", line 40, in create_html_entity_hierarchy
+    entities_json_path = Path(entities_json_path)
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 503, in __init__
+    super().__init__(*args)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 132, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+2026-03-22 22:04:16,902 - INFO - Generated HTML doc_id: important_plan_information_20260322_163416_99e64c0e
+2026-03-22 22:04:16,903 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_163416_99e64c0e
+2026-03-22 22:04:16,904 - INFO - Created document output directory: outputs\important_plan_information_20260322_163416_99e64c0e
+2026-03-22 22:04:16,906 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 22:04:17,055 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:04:20,440 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_163416_99e64c0e\html_1774197260436.custom.json
+2026-03-22 22:04:20,443 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_163416_99e64c0e\html_1774197260436.custom.json
+2026-03-22 22:04:20,444 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 22:04:20,492 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_163416_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:04:20,493 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 22:04:21,939 - ERROR - [Pipeline] NER extraction failed: Missing credentials. Please pass one of `api_key`, `azure_ad_token`, `azure_ad_token_provider`, or the `AZURE_OPENAI_API_KEY` or `AZURE_OPENAI_AD_TOKEN` environment variables.
+2026-03-22 22:04:21,943 - ERROR - Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 854, in _run_ner_extraction
+    from extraction.updated_ner_llm import main as ner_main
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 32, in <module>
+    client = AzureOpenAI(
+        azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+        api_key=os.getenv("AZURE_OPENAI_KEY"),
+        api_version=os.getenv("AZURE_OPENAI_API_VERSION") )
+  File "c:\RAG_demo\.venv\Lib\site-packages\openai\lib\azure.py", line 199, in __init__
+    raise OpenAIError(
+        "Missing credentials. Please pass one of `api_key`, `azure_ad_token`, `azure_ad_token_provider`, or the `AZURE_OPENAI_API_KEY` or `AZURE_OPENAI_AD_TOKEN` environment variables."
+    )
+openai.OpenAIError: Missing credentials. Please pass one of `api_key`, `azure_ad_token`, `azure_ad_token_provider`, or the `AZURE_OPENAI_API_KEY` or `AZURE_OPENAI_AD_TOKEN` environment variables.
+
+2026-03-22 22:04:21,945 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 22:04:21,946 - ERROR - [Pipeline] HTML ingestion failed: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 701, in _ingest_html_entry
+    hierarchy_json_path = create_html_entity_hierarchy(
+        entities_json_path,
+        normalized_json_path,
+        doc_files["hierarchy_json"],
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\html_entity_mapper.py", line 40, in create_html_entity_hierarchy
+    entities_json_path = Path(entities_json_path)
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 503, in __init__
+    super().__init__(*args)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 132, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'
+2026-03-22 22:06:49,989 - INFO - Generated HTML doc_id: important_plan_information_20260322_163649_99e64c0e
+2026-03-22 22:06:49,990 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_163649_99e64c0e
+2026-03-22 22:06:49,991 - INFO - Created document output directory: outputs\important_plan_information_20260322_163649_99e64c0e
+2026-03-22 22:06:49,992 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 22:06:50,155 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:06:53,153 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_163649_99e64c0e\html_1774197413149.custom.json
+2026-03-22 22:06:53,155 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_163649_99e64c0e\html_1774197413149.custom.json
+2026-03-22 22:06:53,156 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 22:06:53,209 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_163649_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:06:53,212 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 22:06:56,201 - INFO - [NER] Detected non-hierarchical format. Converting...
+2026-03-22 22:06:56,249 - ERROR - [Pipeline] NER extraction failed: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2026-03-22 22:06:56,356 - ERROR - Traceback (most recent call last):
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\compat\_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'openpyxl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 921, in _run_ner_extraction
+    ner_main(
+    ~~~~~~~~^
+        leveller_json_path=ner_input_path,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_json_path=entities_output,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        keywords_json_path=keywords_output,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 578, in main
+    catalogue_rows = load_catalogue(CATALOGUE_PATH)  # V2: returns only the 4 fields and high-level category
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 66, in load_catalogue
+    df = pd.read_excel(path, engine="openpyxl")
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 495, in read_excel
+    io = ExcelFile(
+        io,
+    ...<2 lines>...
+        engine_kwargs=engine_kwargs,
+    )
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 1567, in __init__
+    self._reader = self._engines[engine](
+                   ~~~~~~~~~~~~~~~~~~~~~^
+        self._io,
+        ^^^^^^^^^
+        storage_options=storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 552, in __init__
+    import_optional_dependency("openpyxl")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\compat\_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+
+2026-03-22 22:06:56,359 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 22:06:56,369 - ERROR - [Pipeline] HTML ingestion failed: entities_json_path cannot be None
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 701, in _ingest_html_entry
+    hierarchy_json_path = create_html_entity_hierarchy(
+        entities_json_path,
+        normalized_json_path,
+        doc_files["hierarchy_json"],
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\html_entity_mapper.py", line 42, in create_html_entity_hierarchy
+    raise ValueError("entities_json_path cannot be None")
+ValueError: entities_json_path cannot be None
+2026-03-22 22:07:22,458 - WARNING - Index creation warning: schema "rag" does not exist
+
+2026-03-22 22:07:22,462 - INFO - Use pytorch device_name: cpu
+2026-03-22 22:07:22,463 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-03-22 22:07:23,586 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:07:23,587 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-22 22:07:23,603 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 22:07:23,844 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:07:23,857 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 22:07:24,110 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:07:24,123 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 22:07:24,339 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:07:24,356 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 22:07:24,637 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:07:24,652 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 22:07:24,900 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:07:24,917 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 22:07:25,168 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 22:07:25,384 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:07:25,397 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 22:07:26,110 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:07:26,126 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 22:07:26,355 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:07:26,373 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 22:07:26,636 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 22:07:26,872 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 22:07:27,376 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:07:27,406 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 22:07:27,646 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 22:07:28,393 - ERROR - Query error
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 611, in <module>
+    expansion = _expand_query(query, st.session_state.use_validation)
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 104, in _expand_query
+    from retrieval.query_selector import expand_and_embed
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\retrieval\query_selector.py", line 81, in <module>
+    def load_anchors(path=ANCHOR_PATH):
+                          ^^^^^^^^^^^
+NameError: name 'ANCHOR_PATH' is not defined
+2026-03-22 22:33:29,388 - INFO - Generated HTML doc_id: important_plan_information_20260322_170329_99e64c0e
+2026-03-22 22:33:29,389 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_170329_99e64c0e
+2026-03-22 22:33:29,391 - INFO - Created document output directory: outputs\important_plan_information_20260322_170329_99e64c0e
+2026-03-22 22:33:29,392 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 22:33:29,394 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:33:33,034 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_170329_99e64c0e\html_1774199013028.custom.json
+2026-03-22 22:33:33,037 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_170329_99e64c0e\html_1774199013028.custom.json
+2026-03-22 22:33:33,038 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 22:33:33,090 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_170329_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:33:33,091 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 22:33:33,868 - INFO - [NER] Detected non-hierarchical format. Converting...
+2026-03-22 22:33:33,901 - ERROR - [Pipeline] NER extraction failed: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2026-03-22 22:33:33,906 - ERROR - Traceback (most recent call last):
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\compat\_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'openpyxl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 921, in _run_ner_extraction
+    ner_main(
+    ~~~~~~~~^
+        leveller_json_path=ner_input_path,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_json_path=entities_output,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        keywords_json_path=keywords_output,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 569, in main
+    catalogue_rows = load_catalogue(CATALOGUE_PATH)  # V2: returns only the 4 fields and high-level category
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 57, in load_catalogue
+    df = pd.read_excel(path, engine="openpyxl")
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 495, in read_excel
+    io = ExcelFile(
+        io,
+    ...<2 lines>...
+        engine_kwargs=engine_kwargs,
+    )
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 1567, in __init__
+    self._reader = self._engines[engine](
+                   ~~~~~~~~~~~~~~~~~~~~~^
+        self._io,
+        ^^^^^^^^^
+        storage_options=storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 552, in __init__
+    import_optional_dependency("openpyxl")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\compat\_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+
+2026-03-22 22:33:33,911 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 22:33:33,915 - ERROR - [Pipeline] HTML ingestion failed: entities_json_path cannot be None
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 701, in _ingest_html_entry
+    hierarchy_json_path = create_html_entity_hierarchy(
+        entities_json_path,
+        normalized_json_path,
+        doc_files["hierarchy_json"],
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\html_entity_mapper.py", line 42, in create_html_entity_hierarchy
+    raise ValueError("entities_json_path cannot be None")
+ValueError: entities_json_path cannot be None
+2026-03-22 22:38:47,741 - INFO - Generated HTML doc_id: important_plan_information_20260322_170847_99e64c0e
+2026-03-22 22:38:47,742 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_170847_99e64c0e
+2026-03-22 22:38:47,743 - INFO - Created document output directory: outputs\important_plan_information_20260322_170847_99e64c0e
+2026-03-22 22:38:47,744 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 22:38:47,895 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:38:51,668 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_170847_99e64c0e\html_1774199331664.custom.json
+2026-03-22 22:38:51,671 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_170847_99e64c0e\html_1774199331664.custom.json
+2026-03-22 22:38:51,672 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 22:38:51,710 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_170847_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:38:51,711 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 22:38:53,273 - INFO - [NER] Detected non-hierarchical format. Converting...
+2026-03-22 22:38:53,307 - ERROR - [Pipeline] NER extraction failed: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2026-03-22 22:38:53,315 - ERROR - Traceback (most recent call last):
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\compat\_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "C:\Users\asus\AppData\Local\Programs\Python\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'openpyxl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 921, in _run_ner_extraction
+    ner_main(
+    ~~~~~~~~^
+        leveller_json_path=ner_input_path,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_json_path=entities_output,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        keywords_json_path=keywords_output,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 569, in main
+    catalogue_rows = load_catalogue(CATALOGUE_PATH)  # V2: returns only the 4 fields and high-level category
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\updated_ner_llm.py", line 57, in load_catalogue
+    df = pd.read_excel(path, engine="openpyxl")
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 495, in read_excel
+    io = ExcelFile(
+        io,
+    ...<2 lines>...
+        engine_kwargs=engine_kwargs,
+    )
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 1567, in __init__
+    self._reader = self._engines[engine](
+                   ~~~~~~~~~~~~~~~~~~~~~^
+        self._io,
+        ^^^^^^^^^
+        storage_options=storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 552, in __init__
+    import_optional_dependency("openpyxl")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "c:\RAG_demo\.venv\Lib\site-packages\pandas\compat\_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+
+2026-03-22 22:38:53,316 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 22:38:53,317 - ERROR - [Pipeline] HTML ingestion failed: entities_json_path cannot be None
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 701, in _ingest_html_entry
+    hierarchy_json_path = create_html_entity_hierarchy(
+        entities_json_path,
+        normalized_json_path,
+        doc_files["hierarchy_json"],
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\extraction\html_entity_mapper.py", line 42, in create_html_entity_hierarchy
+    raise ValueError("entities_json_path cannot be None")
+ValueError: entities_json_path cannot be None
+2026-03-22 22:41:13,195 - INFO - Generated HTML doc_id: important_plan_information_20260322_171113_99e64c0e
+2026-03-22 22:41:13,196 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_171113_99e64c0e
+2026-03-22 22:41:13,198 - INFO - Created document output directory: outputs\important_plan_information_20260322_171113_99e64c0e
+2026-03-22 22:41:13,199 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 22:41:13,359 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:41:16,607 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_171113_99e64c0e\html_1774199476601.custom.json
+2026-03-22 22:41:16,611 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_171113_99e64c0e\html_1774199476601.custom.json
+2026-03-22 22:41:16,612 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 22:41:16,660 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_171113_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:41:16,661 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 22:41:18,776 - INFO - [NER] Detected non-hierarchical format. Converting...
+2026-03-22 22:41:19,331 - INFO - [Pipeline] NER extraction complete: outputs\important_plan_information_20260322_171113_99e64c0e\entities.json
+2026-03-22 22:41:19,333 - INFO - Loading NER entities from: outputs\important_plan_information_20260322_171113_99e64c0e\entities.json
+2026-03-22 22:41:19,347 - WARNING - Expected list format, got <class 'dict'>
+2026-03-22 22:41:19,348 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 22:41:19,350 - INFO - Loading entities from: outputs\important_plan_information_20260322_171113_99e64c0e\entities.json
+2026-03-22 22:41:19,350 - INFO - Loading normalized HTML from: outputs\important_plan_information_20260322_171113_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:41:19,352 - INFO - Found 51 sections
+2026-03-22 22:41:19,352 - INFO - Created 51 Level_1 sections in hierarchy
+2026-03-22 22:41:19,358 - INFO - Saved HTML hierarchy to: outputs\important_plan_information_20260322_171113_99e64c0e\hierarchy.json
+2026-03-22 22:41:19,359 - INFO - Structure: 51 Level_1 sections
+2026-03-22 22:41:19,359 - INFO - Note: Entities are in outputs\important_plan_information_20260322_171113_99e64c0e\entities.json (levels format)
+2026-03-22 22:41:19,360 - INFO -       ingest_optimized will load entities via load_entities_map()
+2026-03-22 22:41:19,361 - INFO - [Pipeline] Step 5 (HTML): Database ingestion
+2026-03-22 22:41:19,403 - INFO - Use pytorch device_name: cpu
+2026-03-22 22:41:19,403 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-03-22 22:41:19,406 - INFO - Use pytorch device_name: cpu
+2026-03-22 22:41:19,407 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-03-22 22:41:20,422 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:41:20,434 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 22:41:20,728 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:41:20,739 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 22:41:21,035 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:41:21,048 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 22:41:21,343 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:41:21,345 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-22 22:41:21,358 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 22:41:21,651 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:41:21,662 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 22:41:21,957 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:41:21,972 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 22:41:22,264 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 22:41:22,572 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:41:22,585 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 22:41:23,086 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:41:23,099 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 22:41:23,391 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:41:23,406 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 22:41:23,631 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 22:41:23,904 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 22:41:24,312 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:41:24,325 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 22:41:24,619 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 22:41:24,627 - INFO - [Ingestion] Document ID: important_plan_information_20260322_171113_99e64c0e
+2026-03-22 22:41:24,628 - INFO - [Ingestion] Document Title: HTML Document: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:41:24,628 - INFO - [Ingestion] Document Version: 1.0
+2026-03-22 22:41:24,629 - INFO - Using default INPUT_FILE: outputs\important_plan_information_20260322_171113_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:41:24,629 - INFO - PDF path absolute: C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\outputs\important_plan_information_20260322_171113_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:41:24,630 - INFO - ENTITIES_FILE absolute: C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\outputs\important_plan_information_20260322_171113_99e64c0e\entities.json
+2026-03-22 22:41:24,630 - INFO - KEYWORDS_FILE absolute: C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\outputs\important_plan_information_20260322_171113_99e64c0e\keywords.json
+2026-03-22 22:41:25,133 - INFO - Test embedding length: 384
+2026-03-22 22:41:25,357 - INFO - Detected column types: embedding=unknown (udt=None), keywords=unknown (udt=None)
+2026-03-22 22:41:25,358 - INFO - Loaded entity map: 0 paths
+2026-03-22 22:41:25,359 - ERROR - Keywords map error: 'list' object has no attribute 'items'
+2026-03-22 22:41:25,359 - INFO - Loaded 0 keyword sections
+2026-03-22 22:41:25,361 - INFO - Loaded main content
+2026-03-22 22:41:25,368 - ERROR - Ingestion failed: Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\ingest_optimized.py", line 632, in ingest_optimized
+    doc_uuid = get_or_create_document(
+        conn,
+    ...<2 lines>...
+        doc_version  # Use parameterized doc_version
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\ingest_optimized.py", line 246, in get_or_create_document
+    cur.execute("SELECT id FROM rag.documents WHERE external_id = %s", (external_id,))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "rag.documents" does not exist
+LINE 1: SELECT id FROM rag.documents WHERE external_id = 'important_...
+                       ^
+
+
+2026-03-22 22:41:25,370 - INFO - [Pipeline] Database ingestion complete
+2026-03-22 22:41:25,370 - INFO - [Pipeline] Successfully ingested HTML 'important_plan_information_20260322_171113_99e64c0e' (plus 0 page PDFs)
+2026-03-22 22:42:10,809 - INFO - Generated HTML doc_id: important_plan_information_20260322_171210_99e64c0e
+2026-03-22 22:42:10,810 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_171210_99e64c0e
+2026-03-22 22:42:10,811 - INFO - Created document output directory: outputs\important_plan_information_20260322_171210_99e64c0e
+2026-03-22 22:42:10,812 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 22:42:10,963 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:42:14,613 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_171210_99e64c0e\html_1774199534607.custom.json
+2026-03-22 22:42:14,616 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_171210_99e64c0e\html_1774199534607.custom.json
+2026-03-22 22:42:14,617 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 22:42:14,668 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_171210_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:42:14,671 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 22:42:16,884 - INFO - [NER] Detected non-hierarchical format. Converting...
+2026-03-22 22:42:17,228 - INFO - [Pipeline] NER extraction complete: outputs\important_plan_information_20260322_171210_99e64c0e\entities.json
+2026-03-22 22:42:17,232 - INFO - Loading NER entities from: outputs\important_plan_information_20260322_171210_99e64c0e\entities.json
+2026-03-22 22:42:17,234 - WARNING - Expected list format, got <class 'dict'>
+2026-03-22 22:42:17,235 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 22:42:17,236 - INFO - Loading entities from: outputs\important_plan_information_20260322_171210_99e64c0e\entities.json
+2026-03-22 22:42:17,238 - INFO - Loading normalized HTML from: outputs\important_plan_information_20260322_171210_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:42:17,239 - INFO - Found 51 sections
+2026-03-22 22:42:17,239 - INFO - Created 51 Level_1 sections in hierarchy
+2026-03-22 22:42:17,244 - INFO - Saved HTML hierarchy to: outputs\important_plan_information_20260322_171210_99e64c0e\hierarchy.json
+2026-03-22 22:42:17,245 - INFO - Structure: 51 Level_1 sections
+2026-03-22 22:42:17,246 - INFO - Note: Entities are in outputs\important_plan_information_20260322_171210_99e64c0e\entities.json (levels format)
+2026-03-22 22:42:17,246 - INFO -       ingest_optimized will load entities via load_entities_map()
+2026-03-22 22:42:17,247 - INFO - [Pipeline] Step 5 (HTML): Database ingestion
+2026-03-22 22:42:17,256 - INFO - Use pytorch device_name: cpu
+2026-03-22 22:42:17,256 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-03-22 22:42:17,259 - INFO - Use pytorch device_name: cpu
+2026-03-22 22:42:17,259 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-03-22 22:42:18,278 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:42:18,280 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-22 22:42:18,297 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 22:42:18,587 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:42:18,601 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 22:42:18,831 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:42:18,845 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 22:42:19,096 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:42:19,110 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 22:42:19,335 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:42:19,350 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 22:42:19,609 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:42:19,624 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 22:42:19,916 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 22:42:20,225 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:42:20,240 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 22:42:20,735 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:42:20,751 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 22:42:21,043 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:42:21,058 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 22:42:21,350 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 22:42:21,658 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 22:42:22,066 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:42:22,079 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 22:42:22,375 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 22:42:22,382 - INFO - [Ingestion] Document ID: important_plan_information_20260322_171210_99e64c0e
+2026-03-22 22:42:22,382 - INFO - [Ingestion] Document Title: HTML Document: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:42:22,382 - INFO - [Ingestion] Document Version: 1.0
+2026-03-22 22:42:22,383 - INFO - Using default INPUT_FILE: outputs\important_plan_information_20260322_171210_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:42:22,383 - INFO - PDF path absolute: C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\outputs\important_plan_information_20260322_171210_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:42:22,383 - INFO - ENTITIES_FILE absolute: C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\outputs\important_plan_information_20260322_171210_99e64c0e\entities.json
+2026-03-22 22:42:22,383 - INFO - KEYWORDS_FILE absolute: C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\outputs\important_plan_information_20260322_171210_99e64c0e\keywords.json
+2026-03-22 22:42:22,555 - INFO - Test embedding length: 384
+2026-03-22 22:42:22,654 - INFO - Detected column types: embedding=unknown (udt=None), keywords=unknown (udt=None)
+2026-03-22 22:42:22,656 - INFO - Loaded entity map: 0 paths
+2026-03-22 22:42:22,657 - ERROR - Keywords map error: 'list' object has no attribute 'items'
+2026-03-22 22:42:22,657 - INFO - Loaded 0 keyword sections
+2026-03-22 22:42:22,658 - INFO - Loaded main content
+2026-03-22 22:42:22,661 - ERROR - Ingestion failed: Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\ingest_optimized.py", line 632, in ingest_optimized
+    doc_uuid = get_or_create_document(
+        conn,
+    ...<2 lines>...
+        doc_version  # Use parameterized doc_version
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\ingest_optimized.py", line 246, in get_or_create_document
+    cur.execute("SELECT id FROM rag.documents WHERE external_id = %s", (external_id,))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "rag.documents" does not exist
+LINE 1: SELECT id FROM rag.documents WHERE external_id = 'important_...
+                       ^
+
+
+2026-03-22 22:42:22,662 - INFO - [Pipeline] Database ingestion complete
+2026-03-22 22:42:22,663 - INFO - [Pipeline] Successfully ingested HTML 'important_plan_information_20260322_171210_99e64c0e' (plus 0 page PDFs)
+2026-03-22 22:53:07,843 - ERROR - [Pipeline] Unified ingestion failed: 'list' object has no attribute 'lower'
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 304, in ingest_any_from_url_or_file
+    is_url = input_path_or_url.lower().startswith(("http://", "https://"))
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'lower'
+2026-03-22 22:53:32,710 - INFO - [Pipeline] Step 1: Downloading/validating PDF from: outputs/important_plan_information_20260322_171210_99e64c0e/html_normalized_for_ner.json
+2026-03-22 22:53:32,711 - INFO - [Pipeline] ✓ PDF ready: html_normalized_for_ner.json
+2026-03-22 22:53:32,817 - INFO - Use pytorch device_name: cpu
+2026-03-22 22:53:32,817 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-03-22 22:53:32,819 - INFO - Use pytorch device_name: cpu
+2026-03-22 22:53:32,820 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-03-22 22:53:33,611 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:53:33,612 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-22 22:53:33,625 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 22:53:33,917 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:53:33,934 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 22:53:34,183 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:53:34,199 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 22:53:34,532 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:53:34,550 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 22:53:34,840 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:53:34,854 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 22:53:35,147 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:53:35,163 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 22:53:35,454 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 22:53:35,761 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:53:35,776 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 22:53:36,129 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:53:36,144 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 22:53:36,477 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:53:36,494 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 22:53:36,748 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 22:53:36,968 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 22:53:37,398 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:53:37,413 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 22:53:37,673 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 22:53:37,748 - WARNING - [Duplicate Check] Could not parse doc_id format, using as-is: 'html'
+2026-03-22 22:53:37,748 - INFO - [Duplicate Check] Looking for documents with stem: 'html'
+2026-03-22 22:53:37,767 - INFO - [Duplicate Check] No existing documents found with stem: 'html'
+2026-03-22 22:53:37,770 - INFO - Created document output directory: outputs\html
+2026-03-22 22:53:37,772 - INFO - [Pipeline] Step 2: Extracting PDF to JSON
+2026-03-22 22:53:37,776 - WARNING - [Pipeline] data_extraction not available; skipping PDF->JSON extraction
+2026-03-22 22:53:37,776 - ERROR - [Pipeline] Document ingestion failed: Failed to extract PDF to JSON
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\ingestion\multi_doc_orchestrator.py", line 150, in ingest_document_from_url_or_file
+    raise ValueError("Failed to extract PDF to JSON")
+ValueError: Failed to extract PDF to JSON
+2026-03-22 22:56:03,592 - INFO - Generated HTML doc_id: important_plan_information_20260322_172603_99e64c0e
+2026-03-22 22:56:03,593 - INFO - [Pipeline] Generated HTML doc_id: important_plan_information_20260322_172603_99e64c0e
+2026-03-22 22:56:03,594 - INFO - Created document output directory: outputs\important_plan_information_20260322_172603_99e64c0e
+2026-03-22 22:56:03,596 - INFO - [Pipeline] Step 1 (HTML): Extracting HTML to JSON
+2026-03-22 22:56:03,775 - INFO - [HTML] Fetching URL: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:56:19,059 - INFO - [HTML] Wrote JSON: outputs\important_plan_information_20260322_172603_99e64c0e\html_1774200379056.custom.json
+2026-03-22 22:56:19,061 - INFO - [Pipeline] Extracted HTML JSON: outputs\important_plan_information_20260322_172603_99e64c0e\html_1774200379056.custom.json
+2026-03-22 22:56:19,061 - INFO - [Pipeline] Step 2 (HTML): Normalizing HTML JSON
+2026-03-22 22:56:19,099 - INFO - [Pipeline] Normalized for NER: nodes=52 items=52 file=outputs\important_plan_information_20260322_172603_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:56:19,100 - INFO - [Pipeline] Step 3 (HTML): Running NER
+2026-03-22 22:56:20,450 - INFO - [NER] Detected non-hierarchical format. Converting...
+2026-03-22 22:56:33,548 - INFO - HTTP Request: POST https://ragd.services.ai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-03-22 22:56:41,828 - INFO - HTTP Request: POST https://ragd.services.ai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-03-22 22:56:48,787 - INFO - HTTP Request: POST https://ragd.services.ai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-03-22 22:56:48,800 - INFO - [Pipeline] NER extraction complete: outputs\important_plan_information_20260322_172603_99e64c0e\entities.json
+2026-03-22 22:56:48,803 - INFO - Loading NER entities from: outputs\important_plan_information_20260322_172603_99e64c0e\entities.json
+2026-03-22 22:56:48,804 - WARNING - Expected list format, got <class 'dict'>
+2026-03-22 22:56:48,804 - INFO - [Pipeline] Step 4 (HTML): Hierarchy mapping
+2026-03-22 22:56:48,806 - INFO - Loading entities from: outputs\important_plan_information_20260322_172603_99e64c0e\entities.json
+2026-03-22 22:56:48,807 - INFO - Loading normalized HTML from: outputs\important_plan_information_20260322_172603_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:56:48,808 - INFO - Found 51 sections
+2026-03-22 22:56:48,809 - INFO - Created 51 Level_1 sections in hierarchy
+2026-03-22 22:56:48,812 - INFO - Saved HTML hierarchy to: outputs\important_plan_information_20260322_172603_99e64c0e\hierarchy.json
+2026-03-22 22:56:48,814 - INFO - Structure: 51 Level_1 sections
+2026-03-22 22:56:48,815 - INFO - Note: Entities are in outputs\important_plan_information_20260322_172603_99e64c0e\entities.json (levels format)
+2026-03-22 22:56:48,815 - INFO -       ingest_optimized will load entities via load_entities_map()
+2026-03-22 22:56:48,816 - INFO - [Pipeline] Step 5 (HTML): Database ingestion
+2026-03-22 22:56:48,821 - INFO - Use pytorch device_name: cpu
+2026-03-22 22:56:48,822 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-03-22 22:56:48,823 - INFO - Use pytorch device_name: cpu
+2026-03-22 22:56:48,823 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-03-22 22:56:49,706 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:56:49,736 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 22:56:50,157 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:56:50,191 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 22:56:50,437 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:56:50,467 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 22:56:50,731 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:56:50,765 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 22:56:51,175 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:56:51,467 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 22:56:52,043 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:56:52,076 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 22:56:52,317 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 22:56:52,574 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:56:52,606 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 22:56:53,024 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:56:53,054 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 22:56:54,007 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:56:54,046 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 22:56:54,316 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 22:56:54,622 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 22:56:55,032 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 22:56:55,034 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-22 22:56:55,066 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 22:56:55,442 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 22:56:55,448 - INFO - [Ingestion] Document ID: important_plan_information_20260322_172603_99e64c0e
+2026-03-22 22:56:55,449 - INFO - [Ingestion] Document Title: HTML Document: https://www.ibx.com/find-a-plan/individuals-and-families/ibx-health-plans/health-plans/important-plan-information
+2026-03-22 22:56:55,449 - INFO - [Ingestion] Document Version: 1.0
+2026-03-22 22:56:55,449 - INFO - Using default INPUT_FILE: outputs\important_plan_information_20260322_172603_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:56:55,449 - INFO - PDF path absolute: C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\outputs\important_plan_information_20260322_172603_99e64c0e\html_normalized_for_ner.json
+2026-03-22 22:56:55,450 - INFO - ENTITIES_FILE absolute: C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\outputs\important_plan_information_20260322_172603_99e64c0e\entities.json
+2026-03-22 22:56:55,450 - INFO - KEYWORDS_FILE absolute: C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\outputs\important_plan_information_20260322_172603_99e64c0e\keywords.json
+2026-03-22 22:56:55,578 - INFO - Test embedding length: 384
+2026-03-22 22:56:55,688 - INFO - Detected column types: embedding=text (udt=text), keywords=unknown (udt=_text)
+2026-03-22 22:56:55,689 - INFO - Loaded entity map: 0 paths
+2026-03-22 22:56:55,689 - INFO - Loaded 0 keyword sections
+2026-03-22 22:56:55,690 - INFO - Loaded main content
+2026-03-22 22:56:55,697 - INFO - Stats: nodes_total=0, nodes_with_entities=0, embeddings_attempted=0, embeddings_non_null=0
+2026-03-22 22:56:55,697 - INFO - Ingestion complete.
+2026-03-22 22:56:55,698 - INFO - [Pipeline] Database ingestion complete
+2026-03-22 22:56:55,698 - INFO - [Pipeline] Successfully ingested HTML 'important_plan_information_20260322_172603_99e64c0e' (plus 0 page PDFs)
+2026-03-22 23:03:19,124 - WARNING - Index creation warning: access method "hnsw" does not exist
+
+2026-03-22 23:03:19,131 - INFO - Use pytorch device_name: cpu
+2026-03-22 23:03:19,131 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-03-22 23:03:19,449 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:19,498 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:19,754 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:19,773 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:20,058 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:20,075 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:20,367 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:20,384 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 23:03:20,619 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:20,645 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:20,980 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:20,996 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:21,286 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 23:03:21,599 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:21,621 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:21,983 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:21,998 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:22,229 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:22,248 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:22,720 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 23:03:22,997 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 23:03:23,371 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:23,433 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:23,656 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 23:03:26,483 - INFO - HTTP Request: POST https://ragd.services.ai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-03-22 23:03:26,487 - INFO - Use pytorch device_name: cpu
+2026-03-22 23:03:26,487 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-03-22 23:03:26,717 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:26,735 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:27,024 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:27,040 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:27,334 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:27,349 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:27,587 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:27,601 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 23:03:27,824 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:28,146 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:28,388 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:28,407 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:28,661 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 23:03:28,969 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:28,988 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:29,379 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:29,401 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:29,684 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:29,701 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:29,953 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 23:03:30,299 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 23:03:30,709 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:03:30,730 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 23:03:31,016 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 23:03:31,185 - INFO - Retrieving for query: What is the copay for ambulance services?
+2026-03-22 23:03:31,263 - ERROR - Query error
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 613, in <module>
+    result = _retrieve_with_nodes(
+        retriever,
+    ...<2 lines>...
+        model,
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 173, in _retrieve_with_nodes
+    result = retriever.retrieve(
+        query=query,
+    ...<2 lines>...
+        model=model,
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\retrieval\hybrid_retrieval.py", line 289, in retrieve
+    semantic_results = self._semantic_search(query, expansions, document_id, candidate_ids, model, document_cat, document_subcat)
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\retrieval\hybrid_retrieval.py", line 441, in _semantic_search
+    cur.execute(sql, params)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 3: ..., -0.00013786694034934044, -0.05749065428972244]::vector) AS...
+                                                             ^
+
+2026-03-22 23:21:29,882 - WARNING - Could not create HNSW index (pgvector may not be available): access method "hnsw" does not exist
+
+2026-03-22 23:21:29,882 - WARNING - Index creation warning: current transaction is aborted, commands ignored until end of transaction block
+
+2026-03-22 23:21:29,883 - INFO - Retrieving for query: What are the emergency services coverage?
+2026-03-22 23:25:27,880 - INFO - Created idx_nodes_keywords_gin
+2026-03-22 23:25:27,885 - INFO - Created keywords_tsv column and index
+2026-03-22 23:25:27,887 - INFO - Created canonical_name_tsv column and index
+2026-03-22 23:25:27,888 - WARNING - Could not create HNSW index (pgvector may not be available): access method "hnsw" does not exist
+
+2026-03-22 23:25:27,890 - INFO - Created content_tsv column and index
+2026-03-22 23:25:27,892 - INFO - Created idx_entities_canonical
+2026-03-22 23:25:27,892 - INFO - Retrieving for query: What are the emergency services coverage?
+2026-03-22 23:25:27,924 - INFO - Retrieval complete: 3 top results, 3 enriched nodes, 0 subgraph edges, 0 source docs
+2026-03-22 23:27:17,970 - INFO - HTTP Request: POST https://ragd.services.ai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-03-22 23:27:18,594 - INFO - Use pytorch device_name: cpu
+2026-03-22 23:27:18,595 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-03-22 23:27:18,890 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:27:18,902 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:27:19,197 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:27:19,212 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:27:19,505 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:27:19,520 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:27:19,745 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:27:19,759 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 23:27:20,010 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:27:20,024 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:27:20,326 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:27:20,340 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:27:20,570 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 23:27:20,803 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:27:20,818 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:27:21,158 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:27:21,170 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:27:21,567 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:27:21,580 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:27:21,977 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 23:27:22,387 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 23:27:22,799 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:27:22,815 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 23:27:23,208 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 23:27:23,283 - INFO - Retrieving for query: What is the copay for ambulance services?
+2026-03-22 23:27:23,285 - ERROR - Query error
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 613, in <module>
+    result = _retrieve_with_nodes(
+        retriever,
+    ...<2 lines>...
+        model,
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 173, in _retrieve_with_nodes
+    result = retriever.retrieve(
+        query=query,
+    ...<2 lines>...
+        model=model,
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\retrieval\hybrid_retrieval.py", line 267, in retrieve
+    self.conn.rollback()
+                ~~~~~~^^
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\retrieval\hybrid_retrieval.py", line 397, in _apply_metadata_filters
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+2026-03-22 23:31:02,285 - INFO - Created idx_nodes_keywords_gin
+2026-03-22 23:31:02,291 - INFO - Created keywords_tsv column and index
+2026-03-22 23:31:02,293 - INFO - Created canonical_name_tsv column and index
+2026-03-22 23:31:02,295 - WARNING - Could not create HNSW index (pgvector may not be available): access method "hnsw" does not exist
+
+2026-03-22 23:31:02,297 - INFO - Created content_tsv column and index
+2026-03-22 23:31:02,298 - INFO - Created idx_entities_canonical
+2026-03-22 23:31:02,302 - INFO - Use pytorch device_name: cpu
+2026-03-22 23:31:02,303 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-03-22 23:31:03,455 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:31:03,471 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:31:03,763 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:31:03,779 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:31:04,070 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:31:04,072 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-22 23:31:04,087 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:31:04,377 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:31:04,394 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 23:31:04,686 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:31:04,701 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:31:04,991 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:31:05,009 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:31:05,299 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 23:31:05,605 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:31:05,620 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:31:06,117 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:31:06,131 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:31:06,424 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:31:06,439 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:31:06,675 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 23:31:06,936 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 23:31:07,243 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:31:07,256 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 23:31:07,551 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 23:32:11,655 - INFO - HTTP Request: POST https://ragd.services.ai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-03-22 23:32:12,180 - INFO - Use pytorch device_name: cpu
+2026-03-22 23:32:12,181 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-03-22 23:32:12,459 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:32:12,484 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:32:12,729 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:32:12,802 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:32:13,097 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:32:13,115 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:32:13,395 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:32:13,407 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 23:32:13,702 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:32:13,716 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:32:14,009 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:32:14,027 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:32:14,320 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 23:32:14,623 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:32:14,639 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:32:14,930 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:32:14,942 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:32:15,238 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:32:15,252 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:32:15,546 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 23:32:15,855 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 23:32:16,166 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:32:16,178 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 23:32:16,466 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 23:32:16,674 - INFO - Retrieving for query: What is the copay for ambulance services?
+2026-03-22 23:32:16,793 - INFO - Retrieval complete: 5 top results, 5 enriched nodes, 0 subgraph edges, 0 source docs
+2026-03-22 23:32:17,309 - ERROR - Query error
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 622, in <module>
+    answer = _generate_answer(
+        query,
+        context,
+        st.session_state.chat_history,
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 215, in _generate_answer
+    from generation.answer_generator import generate_answer
+ImportError: cannot import name 'generate_answer' from 'generation.answer_generator' (C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\generation\answer_generator.py)
+2026-03-22 23:42:14,575 - INFO - HTTP Request: POST https://ragd.services.ai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-03-22 23:42:14,579 - INFO - Use pytorch device_name: cpu
+2026-03-22 23:42:14,580 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-03-22 23:42:14,897 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:42:14,916 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:42:15,203 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:42:15,221 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:42:15,512 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:42:15,536 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:42:15,817 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:42:15,834 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 23:42:16,126 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:42:16,142 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:42:16,432 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:42:16,451 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:42:16,739 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 23:42:17,061 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:42:17,085 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:42:17,615 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:42:17,657 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:42:18,097 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:42:18,131 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:42:18,370 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 23:42:18,904 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 23:42:19,314 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:42:19,333 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 23:42:19,723 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 23:42:19,940 - INFO - Retrieving for query: Which services are not covered?
+2026-03-22 23:42:20,090 - INFO - Retrieval complete: 5 top results, 5 enriched nodes, 0 subgraph edges, 0 source docs
+2026-03-22 23:42:20,583 - ERROR - Query error
+Traceback (most recent call last):
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 622, in <module>
+    answer = _generate_answer(
+        query,
+        context,
+        st.session_state.chat_history,
+    )
+  File "C:\RAG_demo\IBC_POC_REPO\ibc_chatbot\merged_ui.py", line 217, in _generate_answer
+    return generate_answer(
+        user_query=query,
+    ...<3 lines>...
+        max_tokens=1024,
+    )
+TypeError: generate_answer() got an unexpected keyword argument 'temperature'
+2026-03-22 23:47:22,542 - INFO - HTTP Request: POST https://ragd.services.ai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-03-22 23:47:23,025 - INFO - Use pytorch device_name: cpu
+2026-03-22 23:47:23,025 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-03-22 23:47:23,309 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:47:23,328 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:47:23,634 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:47:23,647 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:47:23,941 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:47:23,952 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-03-22 23:47:24,248 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:47:24,260 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-03-22 23:47:24,555 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:47:24,569 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-03-22 23:47:24,863 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:47:24,878 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:47:25,169 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-22 23:47:25,478 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:47:25,491 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:47:25,789 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:47:25,803 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-03-22 23:47:26,015 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:47:26,029 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-22 23:47:26,296 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-22 23:47:26,512 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-22 23:47:26,923 - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-22 23:47:26,939 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-03-22 23:47:27,221 - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-03-22 23:47:27,435 - INFO - Retrieving for query: What is the copay for ambulance services?
+2026-03-22 23:47:27,518 - INFO - Retrieval complete: 5 top results, 5 enriched nodes, 0 subgraph edges, 0 source docs
+2026-03-22 23:47:28,049 - INFO - LLM context saved to logs\llm_context_20260322_234728.txt
+2026-03-22 23:47:30,392 - INFO - HTTP Request: POST https://ragd.services.ai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"

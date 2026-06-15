@@ -1,0 +1,498 @@
+{
+  "domain_id": "insurance",
+  "display_name": "Insurance & Healthcare",
+  "description": "Medicare Advantage, health insurance coverage, and Evidence of Coverage (EOC) documents",
+  "version": "1.0",
+
+  "embedding_strategy": "embed_entity_rich",
+  "entity_threshold": 1,
+
+  "query_expansion": {
+    "system_role": "You translate informal member questions into formal Medicare insurance policy search queries.",
+    "domain_context": "health insurance, Medicare Advantage, Evidence of Coverage, EOC documents, insurance benefits, coverage policies",
+    "validation_scope": "healthcare, Medicare, health insurance coverage, benefits, medical services, providers, billing, eligibility"
+  },
+
+  "answer_generation": {
+    "system_role": "You are a Medicare insurance assistant.\nAnswer the member's question using ONLY the provided context.\n\nProcess:\n1. Identify the specific service or procedure the member is asking about\n2. Locate the corresponding \"Covered Service\" row or section in the context\n3. Extract ALL relevant cost information (copays, coinsurance, deductibles)\n4. If the question asks for comparisons between different settings, provide costs for EACH facility type clearly labeled.\n5. Always include both in-network and out-of-network costs if available.\n\nRules:\n- Always provide answers in very concise bullet points or a short list format.\n- Extract exact dollar amounts and percentages as they appear in the context.\n- Include the payment structure exactly as written.\n- Treat \"copay\" and \"copayment\" as equivalent terms.\n- Do not provide general explanations — focus only on costs and coverage details.\n- If the exact service is not found in the context, state: \"This information was not found in the plan documents.\"\n- Return only the final answer without preamble.",
+    "greeting_response": "Hello! I'm a healthcare policy assistant. How can I help you today?"
+  },
+
+  "entity_levels": ["Plan", "Payer", "Provider", "Member", "Appeals and Grievances"],
+  "keyword_acronyms": ["eft", "qio", "rrb", "cms", "msp", "moop", "hmo", "ppo", "dme", "esrd"],
+
+  "entity_catalogue_path": null,
+
+  "entities": [],
+
+  "entity_examples": [
+    {
+      "catalogue": {
+        "Entity Category (High Level)": "Payer",
+        "Entity Sub Category": "Medicare (CMS)",
+        "Entity Name": "Medicare",
+        "Description (from EOC)": "Federal agency overseeing Medicare; benefits, plan comparisons, complaints."
+      },
+      "scope_text_contains": "... contact Medicare ...",
+      "expected_entity": {
+        "entity_name": "Medicare",
+        "entity_category": "Medicare (CMS)",
+        "entity_value": "Medicare",
+        "level": "Payer"
+      }
+    },
+    {
+      "catalogue": {
+        "Entity Category (High Level)": "Appeals and Grievances",
+        "Entity Sub Category": "Appeals",
+        "Entity Name": "Appeals",
+        "Description (from EOC)": "Multi-level appeals with standard/fast timelines."
+      },
+      "scope_text_contains": "... you can make an appeal ...",
+      "expected_entity": {
+        "entity_name": "Appeals",
+        "entity_category": "Appeals",
+        "entity_value": "appeal",
+        "level": "Appeals and Grievances"
+      }
+    },
+    {
+      "catalogue": {
+        "Entity Category (High Level)": "Provider",
+        "Entity Sub Category": "Provider Directory",
+        "Entity Name": "Provider/Pharmacy Directory",
+        "Description (from EOC)": "Online and print directory of in-network providers, facilities, and DME suppliers."
+      },
+      "scope_text_contains": "... see our Provider/Pharmacy Directory ...",
+      "expected_entity": {
+        "entity_name": "Provider/Pharmacy Directory",
+        "entity_category": "Provider Directory",
+        "entity_value": "Provider/Pharmacy Directory",
+        "level": "Provider"
+      }
+    },
+    {
+      "catalogue": {
+        "Entity Category (High Level)": "Plan",
+        "Entity Sub Category": "Plan Premium",
+        "Entity Name": "Monthly Plan Premium",
+        "Description (from EOC)": "Monthly plan premium owed to the plan (separate from Part B premium)."
+      },
+      "scope_text_contains": "For 2026, your monthly plan premium is $119.",
+      "expected_entity": {
+        "entity_name": "Monthly Plan Premium",
+        "entity_category": "Plan Premium",
+        "entity_value": "$119",
+        "level": "Plan"
+      }
+    }
+  ],
+
+  "example_queries": [
+    "What is the copay for ambulance services?",
+    "Which services are not covered by my plan?",
+    "Do I need prior authorization for emergency care?",
+    "What is my monthly plan premium?",
+    "How do I file an appeal or grievance?"
+  ],
+
+  "anchor_taxonomy": {
+    "appeals_and_coverage": {
+      "canonical": "appeal",
+      "synonyms": [
+        "appeal",
+        "appeals",
+        "coverage decision",
+        "coverage ending",
+        "coverage review",
+        "denial",
+        "fast-track appeal - notice of medicare non-coverage",
+        "fast-track appeals (nomnc)",
+        "reconsideration"
+      ],
+      "phrases": [
+        "advance notice",
+        "appeal",
+        "appealed and decided upon appeal",
+        "comprehensive outpatient rehabilitation facility",
+        "cost",
+        "coverage ending",
+        "coverage ending too soon",
+        "coverage review decisions",
+        "denials of coverage",
+        "home health services",
+        "level 1 appeal",
+        "level 2 appeal",
+        "notice of medicare non coverage",
+        "rehabilitation care",
+        "request extended coverage",
+        "skilled nursing care"
+      ]
+    },
+    "costs_and_payments": {
+      "canonical": "out-of-pocket costs",
+      "synonyms": [
+        "bill",
+        "coinsurance",
+        "coordination of benefits",
+        "coordination of benefits (cob)",
+        "copayment",
+        "cost",
+        "medicare secondary payer",
+        "medicare secondary payer (msp)",
+        "monthly plan premium",
+        "out-of-pocket",
+        "payment",
+        "plan premium",
+        "premium",
+        "premium deduction - railroad retirement board",
+        "premium deduction - social security",
+        "premium payment - check",
+        "premium payment - eft auto-withdraw",
+        "premium payment - online",
+        "premiums and payment methods",
+        "maximum out of pocket(combined)",
+        "maximum out of pocket(in network)"
+      ],
+      "phrases": [
+        "covered services",
+        "information about medical services",
+        "limits on certain services",
+        "medical benefits chart",
+        "monthly medicare part b premium",
+        "not covered",
+        "out-of-pocket costs",
+        "out-of-pocket expenses",
+        "out-of-pocket maximum",
+        "pay for each covered service",
+        "personal choice 65 medical-only",
+        "plan premium"
+      ]
+    },
+    "providers_and_referrals": {
+      "canonical": "primary care provider",
+      "synonyms": [
+        "doctor",
+        "network provider",
+        "network type",
+        "out-of-network provider",
+        "pcp",
+        "physician",
+        "primary care provider",
+        "provider",
+        "provider directory",
+        "provider role",
+        "provider/pharmacy directory",
+        "specialist",
+        "visitor/traveler program"
+      ],
+      "phrases": [
+        "accepting new patients",
+        "care from specialists",
+        "change your pcp",
+        "find a provider tool",
+        "get care",
+        "medical specialist",
+        "member id card",
+        "mental behavioral health specialist",
+        "network providers",
+        "other network providers",
+        "out-of-network provider",
+        "pcp referral",
+        "plan physician",
+        "primary care provider",
+        "prior authorization",
+        "provider pharmacy directory",
+        "section 2.3"
+      ]
+    },
+    "hospital_and_inpatient": {
+      "canonical": "inpatient hospital stay",
+      "synonyms": [
+        "admission",
+        "care setting",
+        "covered service",
+        "discharge",
+        "hospital",
+        "hospital stay",
+        "inpatient",
+        "inpatient hospital care",
+        "inpatient psychiatric hospital services",
+        "inpatient services during non-covered stay",
+        "member protections",
+        "outpatient hospital observation",
+        "outpatient hospital services",
+        "partial hospitalization / intensive outpatient",
+        "per-admission maximum out-of-pocket (inpatient hospital)",
+        "per-admission maximum out-of-pocket (inpatient mental health)"
+      ],
+      "phrases": [
+        "care after discharge",
+        "discharge date",
+        "doctor",
+        "hospital services",
+        "hospital staff",
+        "inpatient hospital stay",
+        "longer hospital stay",
+        "request",
+        "request extended inpatient stay",
+        "per admission maximum out-of-pocket"
+      ]
+    },
+    "member_support_and_assistance": {
+      "canonical": "state health insurance assistance program",
+      "synonyms": [
+        "assistance program",
+        "counseling",
+        "help",
+        "pa medi",
+        "ship",
+        "support"
+      ],
+      "phrases": [
+        "health insurance counseling",
+        "medicare bills",
+        "medicare questions",
+        "medicare rights",
+        "pa medi",
+        "plan choices",
+        "state health insurance assistance program",
+        "switching plans"
+      ]
+    },
+    "quality_of_care_and_complaints": {
+      "canonical": "quality improvement organization",
+      "synonyms": [
+        "complaint",
+        "grievance",
+        "grievances",
+        "medical error",
+        "qio",
+        "quality improvement organization",
+        "quality improvement organization (qio)",
+        "quality of care"
+      ],
+      "phrases": [
+        "coverage ending too soon",
+        "livanta",
+        "misdiagnosis",
+        "quality improvement organization",
+        "quality of care",
+        "quality-of-care concerns",
+        "unnecessary tests",
+        "wrong medication"
+      ]
+    },
+    "utilization_management": {
+      "canonical": "utilization review",
+      "synonyms": [
+        "coverage decision",
+        "coverage decisions",
+        "coverage review",
+        "medical necessity",
+        "medical review",
+        "medicare-approved clinical trials",
+        "prior authorization",
+        "utilization review"
+      ],
+      "phrases": [
+        "coverage review decisions",
+        "denials of coverage",
+        "financial incentives",
+        "independent medical consultants",
+        "medical directors",
+        "per case-reviewed basis",
+        "underutilization",
+        "utilization review services"
+      ]
+    },
+    "coverage_and_benefits": {
+      "canonical": "covered services",
+      "synonyms": [
+        "abdominal aortic aneurysm screening",
+        "acupuncture for chronic low back pain",
+        "ambulance services",
+        "annual physical exam",
+        "annual wellness visit",
+        "balance billing protection",
+        "benefits",
+        "bone mass measurement",
+        "breast cancer screening",
+        "cardiac rehabilitation services",
+        "chiropractic services",
+        "coinsurance",
+        "colorectal cancer screening",
+        "copayment",
+        "coverage",
+        "covered",
+        "covered service",
+        "dental services",
+        "durable medical equipment and related supplies",
+        "emergency care",
+        "fitness benefit (vendor program)",
+        "hearing services",
+        "home health agency care",
+        "hospice care",
+        "immunizations",
+        "maximum out-of-pocket (combined)",
+        "maximum out-of-pocket (in-network)",
+        "medical care",
+        "mental health",
+        "outpatient mental health care",
+        "outpatient rehabilitation services",
+        "outpatient surgery",
+        "preventive services",
+        "primary care provider",
+        "skilled nursing facility care",
+        "telemedicine visits",
+        "urgently needed services",
+        "vision care"
+      ],
+      "phrases": [
+        "covered services",
+        "details",
+        "get your medical care covered",
+        "information about medical services",
+        "medical benefits chart",
+        "medical care",
+        "pay when you get care",
+        "plan covers",
+        "using our plan"
+      ]
+    },
+    "exclusions_and_limitations": {
+      "canonical": "services not covered",
+      "synonyms": [
+        "custodial care",
+        "excluded",
+        "exclusion",
+        "experimental procedures/items",
+        "home-delivered meals",
+        "limitation",
+        "not covered",
+        "restriction",
+        "worldwide ambulance services"
+      ],
+      "phrases": [
+        "benefit limit",
+        "benefit limitation",
+        "covered only under specific conditions",
+        "excluded from medicare coverage",
+        "not covered by this plan",
+        "out-of-pocket expenses",
+        "out-of-pocket maximum"
+      ]
+    },
+    "membership_and_enrollment": {
+      "canonical": "end membership",
+      "synonyms": [
+        "coverage period",
+        "disenroll",
+        "eligibility",
+        "end membership",
+        "enrollment",
+        "id card",
+        "join plan",
+        "leave plan",
+        "medicare part b premium",
+        "member id card",
+        "service area"
+      ],
+      "phrases": [
+        "63 days or more",
+        "creditable drug coverage",
+        "disenroll",
+        "end your membership",
+        "join a medicare drug plan",
+        "part d late enrollment penalty"
+      ]
+    },
+    "fraud_and_compliance": {
+      "canonical": "health care fraud",
+      "synonyms": [
+        "abuse",
+        "fraud",
+        "illegal activity",
+        "violation",
+        "waste"
+      ],
+      "phrases": [
+        "fraud hotline",
+        "fraudulent and abusive practices",
+        "health care fraud",
+        "health insurance fraud",
+        "reporting fraud waste and abuse",
+        "waste and abuse"
+      ]
+    },
+    "external_agencies": {
+      "canonical": "railroad retirement board",
+      "synonyms": [
+        "federal agency",
+        "government agency",
+        "medicaid (state)",
+        "medicare",
+        "medicare (cms)",
+        "railroad board",
+        "railroad retirement board",
+        "rrb",
+        "social security administration",
+        "social security administration (ssa)",
+        "state health insurance assistance program"
+      ],
+      "phrases": [
+        "benefit programs",
+        "benefits",
+        "contact the agency",
+        "federal agency",
+        "mailing address",
+        "medicare through railroad retirement board",
+        "railroad retirement board",
+        "railroad workers"
+      ]
+    },
+    "legal_and_definitions": {
+      "canonical": "legal terms",
+      "synonyms": [
+        "advance directives",
+        "deadlines",
+        "definitions",
+        "legal",
+        "member rights",
+        "non-discrimination and cultural competence",
+        "notice of privacy practices",
+        "privacy",
+        "procedures",
+        "rules"
+      ],
+      "phrases": [
+        "correct legal terms",
+        "deadlines",
+        "details",
+        "familiar words",
+        "legal terms",
+        "procedures",
+        "rules",
+        "specific situations"
+      ]
+    }
+  },
+
+  "retrieval_hints": {
+    "service_indicators": [
+      "copay", "cost", "pay", "covered", "coverage", "amount",
+      "ambulance", "mental health", "dme", "dental", "hospice",
+      "emergency", "urgent", "inpatient", "outpatient", "therapy",
+      "how much", "what do i pay", "my costs"
+    ],
+    "exclusion_indicators": [
+      "not covered", "excluded", "limitations", "exclusions",
+      "never covered", "does not cover"
+    ],
+    "process_indicators": [
+      "how to", "how do i", "how can i", "contact", "call",
+      "reach", "phone", "address", "where to", "who to"
+    ],
+    "hierarchy_boost_paths": ["medical benefits", "section 2"]
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "domain_id": "compliance",
+  "display_name": "Regulatory & Compliance",
+  "description": "Regulatory frameworks, compliance policies, audit requirements, and industry regulations (GDPR, SOC2, HIPAA, ISO, etc.)",
+  "version": "1.0",
+
+  "embedding_strategy": "embed_all",
+  "entity_threshold": 1,
+
+  "query_expansion": {
+    "system_role": "You translate informal compliance questions into formal regulatory document search queries.",
+    "domain_context": "regulatory compliance, audit requirements, data protection, information security, industry regulations, GDPR, HIPAA, SOC2, ISO standards",
+    "validation_scope": "compliance, regulation, audit, data protection, privacy, security controls, regulatory requirements, certifications, risk management"
+  },
+
+  "answer_generation": {
+    "system_role": "You are a regulatory compliance assistant.\nAnswer questions using ONLY the provided regulatory documentation context.\n\nRules:\n- Answer in clear, concise bullet points.\n- Extract exact regulatory requirements, timelines, and obligations as written.\n- Specify the regulation or standard being referenced when identifiable.\n- Distinguish between mandatory requirements (MUST, SHALL) and recommendations (SHOULD, MAY).\n- Do not interpret legal or regulatory requirements beyond what is explicitly stated.\n- If the requirement is not in the provided context, state: \"This specific requirement was not found in the available compliance documents.\"\n- For critical compliance matters, always recommend consulting with your compliance or legal team.",
+    "greeting_response": "Hello! I'm a compliance and regulatory assistant. I can help you find information about regulatory requirements, audit controls, and compliance obligations. How can I help you today?"
+  },
+
+  "entity_levels": ["Requirement", "Control", "Standard", "Obligation", "Risk", "Exception"],
+  "keyword_acronyms": [
+    "gdpr", "hipaa", "soc2", "iso", "pci", "dss", "ccpa", "glba",
+    "nist", "cis", "fisma", "fedramp", "dpia", "pii", "phi"
+  ],
+
+  "entity_catalogue_path": null,
+
+  "entities": [
+    {
+      "entity_category_high": "Requirement",
+      "entity_sub_category": "Data Protection",
+      "entity_name": "Data Retention Policy",
+      "description": "Requirements for how long data must be kept and when it must be deleted"
+    },
+    {
+      "entity_category_high": "Requirement",
+      "entity_sub_category": "Data Protection",
+      "entity_name": "Data Subject Rights",
+      "description": "Rights individuals have over their personal data (access, erasure, portability)"
+    },
+    {
+      "entity_category_high": "Control",
+      "entity_sub_category": "Access Control",
+      "entity_name": "Access Control",
+      "description": "Controls limiting who can access systems, data, and facilities"
+    },
+    {
+      "entity_category_high": "Control",
+      "entity_sub_category": "Encryption",
+      "entity_name": "Data Encryption",
+      "description": "Requirements for encrypting data at rest and in transit"
+    },
+    {
+      "entity_category_high": "Obligation",
+      "entity_sub_category": "Breach Notification",
+      "entity_name": "Breach Notification",
+      "description": "Requirements to notify regulators and affected individuals of data breaches within specified timeframes"
+    },
+    {
+      "entity_category_high": "Standard",
+      "entity_sub_category": "Audit",
+      "entity_name": "Audit Logging",
+      "description": "Requirements for recording system activity for audit and compliance purposes"
+    },
+    {
+      "entity_category_high": "Risk",
+      "entity_sub_category": "Assessment",
+      "entity_name": "Risk Assessment",
+      "description": "Requirement to identify, evaluate, and document risks to data and systems"
+    },
+    {
+      "entity_category_high": "Obligation",
+      "entity_sub_category": "Training",
+      "entity_name": "Compliance Training",
+      "description": "Mandatory training requirements for employees on compliance topics"
+    },
+    {
+      "entity_category_high": "Requirement",
+      "entity_sub_category": "Vendor Management",
+      "entity_name": "Third-Party Assessment",
+      "description": "Requirements for assessing and monitoring third-party vendors for compliance"
+    },
+    {
+      "entity_category_high": "Exception",
+      "entity_sub_category": "Exemption",
+      "entity_name": "Regulatory Exemption",
+      "description": "Conditions under which a regulatory requirement may not apply"
+    }
+  ],
+
+  "entity_examples": [
+    {
+      "catalogue": {
+        "Entity Category (High Level)": "Obligation",
+        "Entity Sub Category": "Breach Notification",
+        "Entity Name": "Breach Notification",
+        "Description": "Requirements to notify regulators and individuals of data breaches"
+      },
+      "scope_text_contains": "... must notify the supervisory authority within 72 hours of becoming aware of a breach ...",
+      "expected_entity": {
+        "entity_name": "Breach Notification",
+        "entity_category": "Breach Notification",
+        "entity_value": "within 72 hours",
+        "level": "Obligation"
+      }
+    },
+    {
+      "catalogue": {
+        "Entity Category (High Level)": "Requirement",
+        "Entity Sub Category": "Data Protection",
+        "Entity Name": "Data Retention Policy",
+        "Description": "How long data must be kept and when it must be deleted"
+      },
+      "scope_text_contains": "... personal data shall not be kept for longer than 3 years after the end of the contract ...",
+      "expected_entity": {
+        "entity_name": "Data Retention Policy",
+        "entity_category": "Data Protection",
+        "entity_value": "3 years after end of contract",
+        "level": "Requirement"
+      }
+    }
+  ],
+
+  "example_queries": [
+    "What are the data retention requirements under GDPR?",
+    "How quickly must we report a data breach?",
+    "What access controls are required for PII data?",
+    "What are the employee training requirements for compliance?",
+    "What vendor assessment procedures are required?"
+  ],
+
+  "anchor_taxonomy": {
+    "data_protection": {
+      "canonical": "data protection",
+      "synonyms": [
+        "data protection", "privacy", "gdpr", "ccpa", "hipaa", "pii",
+        "personal data", "sensitive data", "data subject", "data controller",
+        "data processor", "data breach", "data minimization"
+      ],
+      "phrases": [
+        "personal information", "data subject rights", "right to erasure",
+        "right to access", "data portability", "privacy policy",
+        "consent", "lawful basis"
+      ]
+    },
+    "security_controls": {
+      "canonical": "security controls",
+      "synonyms": [
+        "access control", "encryption", "firewall", "vulnerability",
+        "penetration testing", "patch management", "mfa",
+        "multi-factor authentication", "sso", "privileged access",
+        "zero trust", "endpoint protection"
+      ],
+      "phrases": [
+        "security policy", "information security", "security assessment",
+        "security incident", "security controls", "iso 27001",
+        "nist framework", "cis controls"
+      ]
+    },
+    "audit_and_reporting": {
+      "canonical": "audit",
+      "synonyms": [
+        "audit", "audit log", "audit trail", "compliance audit",
+        "soc 2", "soc2", "internal audit", "external audit",
+        "report", "attestation", "certification"
+      ],
+      "phrases": [
+        "audit requirements", "audit evidence", "audit findings",
+        "compliance report", "annual audit", "third-party audit",
+        "penetration test results"
+      ]
+    },
+    "breach_and_incident": {
+      "canonical": "breach notification",
+      "synonyms": [
+        "breach", "data breach", "incident", "security incident",
+        "notification", "reportable breach", "non-reportable",
+        "72 hours", "notification timeline"
+      ],
+      "phrases": [
+        "notify the regulator", "breach response", "incident response",
+        "data loss", "unauthorized access", "affected individuals"
+      ]
+    },
+    "risk_management": {
+      "canonical": "risk assessment",
+      "synonyms": [
+        "risk assessment", "dpia", "risk analysis", "risk register",
+        "risk treatment", "residual risk", "inherent risk",
+        "risk appetite", "risk tolerance"
+      ],
+      "phrases": [
+        "identify risks", "assess risk", "risk mitigation",
+        "risk monitoring", "privacy impact assessment"
+      ]
+    },
+    "vendor_and_third_party": {
+      "canonical": "third-party assessment",
+      "synonyms": [
+        "vendor", "third party", "supplier", "subprocessor",
+        "contractor", "vendor assessment", "due diligence",
+        "vendor risk"
+      ],
+      "phrases": [
+        "vendor review", "third-party risk", "subprocessor agreement",
+        "data processing agreement", "dpa", "questionnaire"
+      ]
+    }
+  },
+
+  "retrieval_hints": {
+    "service_indicators": [
+      "requirement", "must", "shall", "required", "mandatory",
+      "timeframe", "deadline", "period", "days", "hours", "frequency"
+    ],
+    "exclusion_indicators": [
+      "exempt", "exemption", "does not apply", "not required",
+      "excluded", "exception", "optional", "may"
+    ],
+    "process_indicators": [
+      "procedure", "steps", "how to", "process", "implement",
+      "establish", "document", "maintain", "review"
+    ],
+    "hierarchy_boost_paths": ["article", "section", "regulation", "control", "requirement"]
+  }
+}
